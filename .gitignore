@@ -51,6 +51,7 @@ staticfiles/
 
 # Environments
 .venv
+.env
 venv/
 ENV/
 
@@ -123,3 +124,4 @@ dump.rdb
 setup/media/
 
 .pytest_cache/
+.idea
