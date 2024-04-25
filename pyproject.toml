@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "weather-forecast-api"
+version = "0.0.1"
+description = "weather_forecast_api dependencies"
+authors = ["Esteban Segura Guerrero"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
