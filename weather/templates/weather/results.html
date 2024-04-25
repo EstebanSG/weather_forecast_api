@@ -1,0 +1,29 @@
+{% if search %}
+    <h1>Search results for: {{ search }}</h1><br>
+    <a href="{% url 'weather:index' %}">Search another city?</a>
+    <ul>
+    {% for item in cities %}
+        <li>
+            <h2>{{ item.city.name }}</h2>
+            <ul>
+            <li>(lat: {{ item.city.lat }},  lng: {{ item.city.lng }})</li>
+                {% for day in item.weather_forecast %}
+                     <li>
+                     <h3>Weather on {{ day.day }}</h3>
+                         <ul>
+                             <li>Expected max temperature: {{ day.max }}</li>
+                             <li>Expected min temperature: {{ day.min }}</li>
+                             <li>Expected weather: {{ day.weather }}</li>
+                         </ul>
+                     </li>
+
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'weather:index' %}">Search another city?</a>
+{% else %}
+    <p>There is not a city with that name</p>
+    <a href="{% url 'weather:index' %}">Search another city?</a>
+{% endif %}

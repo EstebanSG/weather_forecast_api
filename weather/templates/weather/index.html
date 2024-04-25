@@ -1,0 +1,10 @@
+<form action="{% url 'weather:search' %}" method="GET">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Search City</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            <label for="search">Enter a partial or total name of any city in Mexico</label><br>
+            <input type="text" name="city" id="search">
+            <button type="submit">Search</button>
+    </fieldset>
+</form>
