@@ -8,3 +8,15 @@ migrate:
 
 create_user:
 	python manage.py createsuperuser
+
+shell:
+	python manage.py shell
+
+runserver:
+	python manage.py runserver
+
+
+up: migrate runserver
+
+test:
+	python manage.py test
